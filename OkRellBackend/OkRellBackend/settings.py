@@ -90,7 +90,7 @@ DATABASES = {
 
 # Make changes to this test database variable if we decide to change the test database engine
 if DEBUG:
-    DATABASES['default'] = 'default': {
+    DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'testokrell',
     }
