@@ -1,3 +1,10 @@
 okrell/Lib/site-packages
 OkRellBackend/OkRellBackend/__pycache__/__init__.cpython-36.pyc
 *.pyc
+*.pyc
+OkRellBackend/OkRellBackend/__pycache__/settings.cpython-36.pyc
+OkRellBackend/OkRellBackend/__pycache__/__init__.cpython-36.pyc
+OkRellBackend/testokrell
+OkRellBackend/OkRellBackend/__pycache__/urls.cpython-36.pyc
+OkRellBackend/OkRellBackend/__pycache__/settings.cpython-36.pyc
+OkRellBackend/OkRellBackend/__pycache__/__init__.cpython-36.pyc
