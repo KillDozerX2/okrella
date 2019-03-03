@@ -21,6 +21,10 @@ DEBUG = True
 # Add allowed host to this list on deployment
 ALLOWED_HOSTS = ['okrella']
 
+# This adds localhost to allowed hosts if debug mode is on
+if DEBUG:
+    ALLOWED_HOSTS.append('localhost');
+
 
 # Application definition
 # If you are adding new apps then putthem in here
@@ -57,7 +61,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # Add more items to list if you're adding static html templates to an app
         # We strictly enforce use of only the prespecified front-end technology
-        'DIRS': [os.path.join(BASE_DIR, 'okrellfrontend/dist')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontendmain/build')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
