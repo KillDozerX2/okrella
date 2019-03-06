@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Main.apps.MainConfig',
     'Management.apps.ManagementConfig',
+    'User.apps.UserConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth'
 ]
 
 # Don't make any changes to this before talking to me. DIRECTLY
