@@ -1,6 +1,5 @@
 """
 Django settings for OkRellBackend project.
-
 Using django version 2.1.7
 """
 

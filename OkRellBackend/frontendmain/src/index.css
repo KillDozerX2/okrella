@@ -5,4 +5,37 @@ html body {
 }
 body {
 	font-family: Roboto;
+	background-color: #f9f7f6;
+}
+.back{
+	background-color: #f4e2d9;
+}
+.leftMenu {
+	margin-left: 150px;
+}
+.rightMenu {
+	margin-right: 150px;
+}
+.link {
+	color: #3a3734;
+}
+.link:hover {
+	color: black;
+	-webkit-transition: color 1s ease; /* Safari */
+  	transition: color 1s ease;
+}
+.sideDrawer{
+	list-style: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 40%;
+	height: 100%;
+	opacity: 0.7;
+	-webkit-transition: width 2s; /* Safari */
+  	transition: width 2s;
+}
+.sideDrawer a {
+  	color: #3a3734;	
 }
