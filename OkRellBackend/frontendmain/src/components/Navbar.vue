@@ -1,10 +1,5 @@
 <template>
-	<!-- <div id="nav">
-		<router-link to="/">Home</router-link> |
-		<router-link to="/about">About</router-link> |
-		<router-link to="/about">About</router-link>
-	</div> -->
-	<div>
+	<div id="navbar">
 		<b-navbar toggleable="md" type="light" variant="light">
 
 			<b-navbar-toggle target="nav_collapse" />
@@ -30,7 +25,16 @@
 	</div>
 </template>
 
-<style>
+<style scoped>
+#navbar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 56px;
+	z-index: 999;
+}
+
 #nav_collapse a {
   font-weight: bold;
 }

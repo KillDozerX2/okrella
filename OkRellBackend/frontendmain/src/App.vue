@@ -2,28 +2,58 @@
 <template>
   <div id="app">
     <Navbar />
-    <!-- This is the router vie that router loads up. -->
-    <router-view/>
+    <!-- This is the view that router loads up. -->
+    <router-view id="mainView"/>
+    <Faqs />
+    <Sitefooter />
   </div>
 </template>
 
-<style scoped>
+<style>
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+::selection {
+  background: #42b983;
+  color: white;
+  }
+::-moz-selection {
+  background: #42b983;
+  color: white;
+}
 #app {
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8em;
+  /*text-align: center;*/
+  color: #666;
+}
+#mainView {
+  margin: 56px 0 0 0;
 }
 </style>
 
 <script>
 
 import Navbar from '@/components/Navbar.vue'
+import Sitefooter from '@/components/Sitefooter.vue'
+import Faqs from '@/components/Faqs.vue'
 export default {
   name: 'app',
   components: {
-    Navbar    
+    Navbar,
+    Sitefooter,
+    Faqs,
   }
 }
 
