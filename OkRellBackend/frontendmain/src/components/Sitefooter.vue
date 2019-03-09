@@ -14,6 +14,7 @@
 	overflow: hidden;
 	font-family: 'Just Another Hand', cursive;
 	padding: 5% 0 3% 0;
+	clear: both;
 }
 /*End sitefooter styles */
 </style scoped>

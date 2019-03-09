@@ -43,4 +43,35 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 ## This is the main scheme for the css followed.
+Always include your Css in the correct commented blocks like This
+```
+/* Begin name of block, semantically understood */
+/* End name of block, semantically understood */
+```
 
+## New vue instance template
+```
+<template>
+	<div id="Name of your component in lowercase">
+		
+	</div>
+</template>
+
+<style scoped>
+
+</style scoped>
+
+<script>
+// @ is an alias to /src
+// Import your components here.
+// import HelloWorld from '@/components/HelloWorld.vue'
+
+export default {
+	name: 'Name of your component in lowercase',
+	components: {
+		
+	}
+}
+</script>
+
+```

@@ -8,7 +8,7 @@
 				<p>
 					Get amazing razors and world-class grooming products delivered for just a few bucks
 				</p>
-				<b-button size="lg" class="button" to="getstarted">GET STARTED</b-button>
+				<LinkButton size="lg" text="GET STARTED" action="getstarted"></LinkButton>
 			</div>
 		</div>
 		<div class="paraImg2">
@@ -19,37 +19,35 @@
 				<p>
 					Get amazing razors and world-class grooming products delivered for just a few bucks
 				</p>
-				<b-button size="lg" class="button" to="products">VIEW PRODUCTS</b-button>
+				<LinkButton size="lg" text="VIEW PRODUCTS" action="products"></LinkButton>
 			</div>
 		</div>
 		<div class="section section-light paraImg3">
-			<h2>Three reasons to try okrell</h2>
-		 	<b-row>
-				<b-col cols="1"></b-col>
-				<b-col md>
+		 	<div class="row">
+		 		<h2>Three reasons to try okrell</h2>
+				<div class="col-md">
 					<img src="../assets/heart-box.svg" class="icon form-group">
 					<h4 class="form-group">Lorem ipsum dolor sit.</h4>
 					<span class="form-group">
 						Our boxes don't just come with the best gromming items but they are packed with love.
 					</span>
-				</b-col>
-				<b-col md>
+				</div>
+				<div class="col-md">
 					<img src="../assets/prison.svg" class="icon form-group">
 					<h4 class="form-group">Lorem ipsum dolor sit.</h4>
 					<span class="form-group">
 						We don't believe in trapping customers an never letting them go. 
 						With Okrell you are free to leave whenever you'd like. 
 					</span>
-				</b-col>
-				<b-col md>
+				</div>
+				<div class="col-md">
 					<img src="../assets/calendar.svg" class="icon form-group">
 					<h4 class="form-group">Lorem ipsum dolor sit.</h4>
 					<span class="form-group">
 						When we say that your box will be there on the 19th, it will be there on the 19th.
 					</span>
-				</b-col>
-				<b-col cols="1"></b-col>
-			</b-row>
+				</div>
+			</div class="row">
 		</div>
 	</div>
 </template>
@@ -113,17 +111,36 @@
 	padding: 
 }
 /*End section container settings*/
+/*Begin row col-md styles*/
+.row {
+	width: 80%;
+	padding: 3% 10%;
+}
+.col-md {
+	padding:0 3.15%; 
+	width: 27%;
+	float: left;
+}
+/*End  row col-md styles*/
+/* Being media querries */
+@media only screen and (max-width: 768px) {
+	.col-md {
+		width: 100%;
+	}
+}
+/* End media querries */
 </style>
 
 <script>
 // @ is an alias to /src
 // Import your components here.
 // import HelloWorld from '@/components/HelloWorld.vue'
+import LinkButton from '@/components/Inputs/LinkButton.vue'
 
 export default {
   name: 'home',
   components: {
-
+  	LinkButton,
   }
 }
 </script>

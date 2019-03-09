@@ -13,6 +13,7 @@
 body, html{
   height:100%;
   margin:0;
+  padding: 0;
   font-size:16px;
   font-family:"Lato", sans-serif;
   font-weight:400;
@@ -38,8 +39,8 @@ body, html{
   /*text-align: center;*/
   color: #666;
 }
-#mainView {
-  margin: 56px 0 0 0;
+.router-link-exact-active {
+  color: #42b983;
 }
 </style>
 
