@@ -38,13 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third Party apps
+    'rest_framework',
+    # Local apps (Your project's apps)
     'Main.apps.MainConfig',
     'Management.apps.ManagementConfig',
     'Accounts',
-    'User',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'rest_auth'
 ]
 
 AUTH_USER_MODEL = 'Accounts.SiteUser'

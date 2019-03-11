@@ -75,3 +75,8 @@ export default {
 </script>
 
 ```
+
+## Getting json data
+#### Install axios if not installed by npm install with apckage.json, Seriosly talk to me if this happens
+
+`npm install --save axios`

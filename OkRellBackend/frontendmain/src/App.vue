@@ -42,6 +42,9 @@ body, html{
 .router-link-exact-active {
   color: #42b983;
 }
+#mainView {
+  padding-top: 56px;
+}
 </style>
 
 <script>
