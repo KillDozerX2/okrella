@@ -22,7 +22,7 @@ ALLOWED_HOSTS = ['okrella']
 
 # This adds localhost to allowed hosts if debug mode is on
 if DEBUG:
-    ALLOWED_HOSTS.append('localhost');
+    ALLOWED_HOSTS.append("*");
 
 
 # Application definition
@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Main.apps.MainConfig',
     'Management.apps.ManagementConfig',
-    'User.apps.UserConfig',
+    'Accounts',
+    'User',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth'
 ]
+
+AUTH_USER_MODEL = 'Accounts.SiteUser'
 
 # Don't make any changes to this before talking to me. DIRECTLY
 MIDDLEWARE = [
@@ -64,7 +67,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # Add more items to list if you're adding static html templates to an app
         # We strictly enforce use of only the prespecified front-end technology
-        'DIRS': [os.path.join(BASE_DIR, 'frontendmain/build')],
+        'DIRS': [os.path.join(BASE_DIR, 'frontendmain/dist'), os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,14 +88,18 @@ WSGI_APPLICATION = 'OkRellBackend.wsgi.application'
 # One for testing and one for development, With similar schema but not even close to the amount of data they hold 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dcau5uv06inhmh',
-        'USER': 'yhzkqexduihimr',
-        'PASSWORD': '172cfd4109ee47a1def27c0e0daf9fcbb44e81611822fc7bdc7a8c01dbce174a',
-        'HOST': 'ec2-54-83-17-151.compute-1.amazonaws.com',
-        'PORT': '5432',
+    'default' : {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'testokrell',
     }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'dcau5uv06inhmh',
+    #     'USER': 'yhzkqexduihimr',
+    #     'PASSWORD': '172cfd4109ee47a1def27c0e0daf9fcbb44e81611822fc7bdc7a8c01dbce174a',
+    #     'HOST': 'ec2-54-83-17-151.compute-1.amazonaws.com',
+    #     'PORT': '5432',
+    # }
 }
 
 # Make changes to this test database variable if we decide to change the test database engine
@@ -101,7 +108,12 @@ if DEBUG:
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'testokrell',
     }
-
+# These are the settings for django send_mail() service
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'hp1himanshupant27598@gmail.com'
+EMAIL_HOST_PASSWORD = 'machette'
+EMAIL_PORT = 587
 # These are the production level setting that need to happen before heroku deployment
 # import dj_database_url
 # db_from_env = dj_database_url.config()
@@ -146,8 +158,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 # This list contains paths to where static files can be stored and should be looked for
-STATICFILES_DIRS = []
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'frontendmain/dist'),
+]
 
 # This path is where the static files will be served from in production
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_serve')
+CSS_ROOT = os.path.join(BASE_DIR, 'static_serve/css')
+IMG_ROOT = os.path.join(BASE_DIR, 'static_serve/img')
+JS_ROOT = os.path.join(BASE_DIR, 'static_serve/js')
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

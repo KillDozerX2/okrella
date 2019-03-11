@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Confirm email</title>
+</head>
+<body>
+	<form method="post">{% csrf_token %}
+		<input type="text" name="UserEmail" placeholder="Email">
+		<input type="text" name="Code" placeholder="Confrimation Code">
+		<input type="submit" name="Confirm">
+	</form>
+</body>
+</html>
