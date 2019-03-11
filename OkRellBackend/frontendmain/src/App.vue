@@ -3,7 +3,7 @@
   <div id="app">
     <Navbar />
     <!-- This is the view that router loads up. -->
-    <router-view id="mainView"/>
+    <router-view id="mainView" />
     <Faqs />
     <Sitefooter />
   </div>
@@ -55,7 +55,12 @@ export default {
     Navbar,
     Sitefooter,
     Faqs,
-  }
+  },
+  methods: {
+    handleScroll: function (evt) {
+        console.log(evt);
+    },
+  },
 }
 
 </script>

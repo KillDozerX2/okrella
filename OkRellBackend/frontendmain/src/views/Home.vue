@@ -1,60 +1,78 @@
 <template>
 	<div id="home">		
-		<div class="paraImg1">
-			<div class="caption">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur.
-				</h1>
-				<p>
-					Get amazing razors and world-class grooming products delivered for just a few bucks
-				</p>
-				<LinkButton size="lg" text="GET STARTED" action="getstarted"></LinkButton>
+		<div class="infocus" v-bind:class="{ notinfocus: firstSecInFocus }" v-on:scroll = "handleScroll">
+			<div class="paraImg1">
+				<div class="caption">
+					<h1>
+						Lorem ipsum dolor sit amet, consectetur.
+					</h1>
+					<p>
+						Get amazing razors and world-class grooming products delivered for just a few bucks
+					</p>
+					<LinkButton size="lg" text="GET STARTED" action="getstarted"></LinkButton>
+				</div>
 			</div>
 		</div>
-		<div class="paraImg2">
-			<div class="caption">
-				<h1>
-					Lorem ipsum dolor sit amet, consectetur.
-				</h1>
-				<p>
-					Get amazing razors and world-class grooming products delivered for just a few bucks
-				</p>
-				<LinkButton size="lg" text="VIEW PRODUCTS" action="products"></LinkButton>
+		<div class="notinfocus" v-bind:class="{ infocus: SecondSecInFocus }" onscroll="console.log('scrolled')">
+			<div class="paraImg2">
+				<div class="caption">
+					<h1>
+						Lorem ipsum dolor sit amet, consectetur.
+					</h1>
+					<p>
+						Get amazing razors and world-class grooming products delivered for just a few bucks
+					</p>
+					<LinkButton size="lg" text="VIEW PRODUCTS" action="products"></LinkButton>
+				</div>
 			</div>
 		</div>
-		<div class="section section-light paraImg3">
-		 	<div class="row">
-		 		<h2>Three reasons to try okrell</h2>
-				<div class="col-md">
-					<img src="../assets/heart-box.svg" class="icon form-group">
-					<h4 class="form-group">Lorem ipsum dolor sit.</h4>
-					<span class="form-group">
-						Our boxes don't just come with the best gromming items but they are packed with love.
-					</span>
-				</div>
-				<div class="col-md">
-					<img src="../assets/prison.svg" class="icon form-group">
-					<h4 class="form-group">Lorem ipsum dolor sit.</h4>
-					<span class="form-group">
-						We don't believe in trapping customers an never letting them go. 
-						With Okrell you are free to leave whenever you'd like. 
-					</span>
-				</div>
-				<div class="col-md">
-					<img src="../assets/calendar.svg" class="icon form-group">
-					<h4 class="form-group">Lorem ipsum dolor sit.</h4>
-					<span class="form-group">
-						When we say that your box will be there on the 19th, it will be there on the 19th.
-					</span>
-				</div>
-			</div class="row">
+		<div class="notinfocus" v-bind:class="{ infocus: ThirdSecInFocus }">
+			<div class="section section-light paraImg3">
+			 	<div class="row">
+			 		<h2>Three reasons to try okrell</h2>
+					<div class="col-md">
+						<img src="../assets/heart-box.svg" class="icon form-group">
+						<h4 class="form-group">Lorem ipsum dolor sit.</h4>
+						<span class="form-group">
+							Our boxes don't just come with the best gromming items but they are packed with love.
+						</span>
+					</div>
+					<div class="col-md">
+						<img src="../assets/prison.svg" class="icon form-group">
+						<h4 class="form-group">Lorem ipsum dolor sit.</h4>
+						<span class="form-group">
+							We don't believe in trapping customers an never letting them go. 
+							With Okrell you are free to leave whenever you'd like. 
+						</span>
+					</div>
+					<div class="col-md">
+						<img src="../assets/calendar.svg" class="icon form-group">
+						<h4 class="form-group">Lorem ipsum dolor sit.</h4>
+						<span class="form-group">
+							When we say that your box will be there on the 19th, it will be there on the 19th.
+						</span>
+					</div>
+				</div class="row">
+			</div>
 		</div>
 	</div>
 </template>
 
 <style scoped>
-/*Begin home container settings*/
-/*End home container settings*/
+/*Begin not in focus styles */
+/*.notinfocus {
+	opacity: 0.6;
+	-webkit-transform: scale3d(0.8,0.8,1); 
+ 	transform: scale3d(0.8,0.8,1);
+	transition: all 1s ease;
+}
+.infocus {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+ 	transform: scale3d(1,1,1); 
+	transition: all 1s ease;
+}*/
+/*End not in focus styles */
 /*Begin parallax effect styles*/
 .paraImg1, .paraImg2, .paraImg3{
 	position: relative;
@@ -141,6 +159,28 @@ export default {
   name: 'home',
   components: {
   	LinkButton,
-  }
+  },
+	data: function () {
+		return {
+			firstSecInFocus: true,
+			SecondSecInFocus: false,
+			ThirdSecInFocus: false,
+		}
+	},
+	methods: {
+		setFocus: function (event){
+			console.log(event);
+		},
+		handleScroll: function (evt) {
+			console.log("Event Worked");
+	    	console.log(evt);
+	    },
+	},
+	created () {
+		window.addEventListener('scroll', this.handleScroll);
+	},
+	destroyed () {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
 }
 </script>
