@@ -59,10 +59,13 @@ export default {
     Sitefooter,
     Faqs,
   },
+  computed: {
+    user() {
+      return this.$store.state.user
+    }
+  },
   methods: {
-    handleScroll: function (evt) {
-        console.log(evt);
-    },
+    
   },
 }
 

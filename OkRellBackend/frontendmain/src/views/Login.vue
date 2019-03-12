@@ -12,7 +12,6 @@
 // @ is an alias to /src
 // Import your components here.
 // import HelloWorld from '@/components/HelloWorld.vue'
-import axios from 'axios'
 
 export default {
 	name: 'login',
@@ -28,6 +27,7 @@ export default {
 		getHello : function() {
 			console.log("Getting Data");
 			/*These addresses need to be changed before pushing to production*/
+			axios.
 			axios.get(this.srcUrl + '/api/user/hello/')
       			 	.then(response => {
       			 	console.log(response);
