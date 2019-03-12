@@ -40,13 +40,23 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third Party apps
     'rest_framework',
+    'rest_framework.authtoken',
     # Local apps (Your project's apps)
     'Main.apps.MainConfig',
     'Management.apps.ManagementConfig',
     'Accounts',
 ]
 
+# This tells Django what user model we are creating
 AUTH_USER_MODEL = 'Accounts.SiteUser'
+
+# These are the authentication classes
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
+
 
 # Don't make any changes to this before talking to me. DIRECTLY
 MIDDLEWARE = [
